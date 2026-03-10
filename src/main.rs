@@ -5,7 +5,7 @@ use synthesizer::synth::Synth;
 fn main() {
     // Create sine wave oscillator
     let wave_table_size = 64;
-    let wave_table = wavetable::sine(wave_table_size);
+    let wave_table = wavetable::saw(wave_table_size);
 
     let new_synth = Synth::new(44100, wave_table);
 
