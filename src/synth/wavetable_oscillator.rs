@@ -1,16 +1,17 @@
+use std::sync::Arc;
 use std::time::Duration;
 use rodio::Source;
 
 #[derive(Default)]
 pub struct WavetableOscillator {
     sample_rate: u32,
-    wave_table: Vec<f32>,
+    wave_table: Arc<Vec<f32>>,
     index: f32,
     index_increment: f32,
 }
 
 impl WavetableOscillator {
-    pub fn new(sample_rate: u32, wave_table: Vec<f32>) -> WavetableOscillator {
+    pub fn new(sample_rate: u32, wave_table: Arc<Vec<f32>>) -> WavetableOscillator {
         WavetableOscillator {
             sample_rate,
             wave_table,
